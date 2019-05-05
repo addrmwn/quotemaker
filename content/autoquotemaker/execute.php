@@ -50,7 +50,12 @@ if(isset($_POST['create'])) {
 
 
 	$imagebase64 = "data:image/png;base64,".base64_encode(file_get_contents($filename));
-	echo "<a href='".$imagebase64."' target='_blank' download='$filename'><img src='".$imagebase64."' class='img-fluid'/></a>";
+	echo "<img src='".$imagebase64."' class='img-fluid'/>
+	<div>><center>
+	<div class='buttons'>
+                      <a href='".$imagebase64."' class='btn btn-lg btn-primary' target='_blank' download='$filename'>Download</a>
+</center>
+                    </div>";
 	unlink($filename);
 }
 
